@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me - Ma. Bernadette Pascua</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>Ma. Bernadette Pascua</h1>
+        <p>9 - St. Padre Pio</p>
+    </header>
+
+    <nav>
+        <a href="LandingPage.html">Home</a>
+        <a href="AboutMe.html" class="active">About Me</a>
+        <a href="MyPassion.html">My Passion</a>
+        <a href="FamilyAndCircles.html">Family & Circles</a>
+    </nav>
+
+    <main>
+        <div class="about-wrapper">
+            <!-- Left Side: Main Info -->
+            <section class="info-container">
+                <h2>About Me</h2>
+
+                <div class="card hover-card">
+                    <h3>Birthday</h3>
+                    <p>September 6, 2011</p>
+                    <div class="polaroid">
+                        <img src="assets/bday.png" alt="Birthday">
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>Age</h3>
+                    <p>I am 14 Years Old</p>
+                </div>
+
+                <div class="card hover-card">
+                    <h3>School</h3>
+                    <p>St. Louis College of Valenzuela</p>
+                    <div class="polaroid">
+                        <img src="assets/school.png" alt="School">
+                    </div>
+                </div>
+
+                <div class="card click-card" onclick="showSidePanel('favorites')">
+                    <h3>Favorite Things</h3>
+                    <p>Click to see what I love! ➔</p>
+                </div>
+
+                <div class="card click-card" onclick="showSidePanel('skills')">
+                    <h3>Skills</h3>
+                    <p>Click to see what I can do! ➔</p>
+                </div>
+            </section>
+
+            <!-- Right Side: Hidden List Panel -->
+            <aside class="side-panel" id="sidePanel">
+                <button class="close-btn" onclick="hideSidePanel()">✖</button>
+                <h2 id="panelTitle">Title</h2>
+                <ul id="panelList">
+                    <!-- List items will be injected here by JavaScript -->
+                </ul>
+            </aside>
+        </div>
+    </main>
+
+    <footer>
+        <p>™ Gawa ni cute</p>
+    </footer>
+
+    <script>
+        function showSidePanel(topic) {
+            const panel = document.getElementById('sidePanel');
+            const title = document.getElementById('panelTitle');
+            const list = document.getElementById('panelList');
+
+            panel.style.display = 'block';
+
+            if (topic === 'favorites') {
+                title.innerText = 'My Favorite Things';
+                list.innerHTML = `
+                    <li>Pink</li>
+                    <li>Chuckie</li>
+                    <li>Dancing</li>
+                    <li>The song: "Before" by NIKI </li>
+                    <li>The aritists: NIKI, CLairo, The Weeknd, and PARTYNEXTDOOR</li>
+                `;
+            } else if (topic === 'skills') {
+                title.innerText = 'My Skills';
+                list.innerHTML = `
+                    <li>Taekwondo (Black Belt)</li>
+                    <li>Dancing</li>
+                    <li>Choir</li>
+                `;
+            }
+        }
+
+        function hideSidePanel() {
+            document.getElementById('sidePanel').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
