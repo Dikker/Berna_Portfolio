@@ -20,9 +20,12 @@
         <a href="FamilyAndCircles.html">Family & Circles</a>
     </nav>
 
+    <input type="radio" name="about-panel" id="panel-none" class="panel-radio" checked>
+    <input type="radio" name="about-panel" id="panel-favorites" class="panel-radio">
+    <input type="radio" name="about-panel" id="panel-skills" class="panel-radio">
+
     <main>
         <div class="about-wrapper">
-            <!-- Left Side: Main Info -->
             <section class="info-container">
                 <h2>About Me</h2>
 
@@ -47,62 +50,68 @@
                     </div>
                 </div>
 
-                <div class="card click-card" onclick="showSidePanel('favorites')">
+                <label for="panel-favorites" class="card click-card">
                     <h3>Favorite Things</h3>
                     <p>Click to see what I love! ➔</p>
-                </div>
+                </label>
 
-                <div class="card click-card" onclick="showSidePanel('skills')">
+                <label for="panel-skills" class="card click-card">
                     <h3>Skills</h3>
                     <p>Click to see what I can do! ➔</p>
-                </div>
+                </label>
             </section>
 
-            <!-- Right Side: Hidden List Panel -->
-            <aside class="side-panel" id="sidePanel">
-                <button class="close-btn" onclick="hideSidePanel()">✖</button>
-                <h2 id="panelTitle">Title</h2>
-                <ul id="panelList">
-                    <!-- List items will be injected here by JavaScript -->
+            <aside class="side-panel favorites-panel">
+                <label for="panel-none" class="close-btn">✖</label>
+                <h2>My Favorite Things</h2>
+                <ul>
+                    <li>Pink</li>
+                    <li>Chuckie</li>
+                    <li>Dancing</li>
+                    <li>The song: "Before" by NIKI</li>
+                    <li>The artists: NIKI, Clairo, The Weeknd, and PARTYNEXTDOOR</li>
+                </ul>
+            </aside>
+
+            <aside class="side-panel skills-panel">
+                <label for="panel-none" class="close-btn">✖</label>
+                <h2>My Skills</h2>
+                <ul>
+                    <li>Taekwondo (Black Belt)</li>
+                    <li>Dancing</li>
+                    <li>Choir</li>
                 </ul>
             </aside>
         </div>
     </main>
 
+    <!-- Music Player -->
+    <div class="spotify-bar">
+        <div class="spotify-left">
+            <img src="assets/niki.png" alt="Album Cover" class="spotify-cover">
+            <div class="spotify-track">
+                <p class="track-title">Before <i class="fa-solid fa-circle-check verified-icon"></i></p>
+                <p class="track-artist">NIKI</p>
+            </div>
+        </div>
+
+        <div class="spotify-center">
+            <audio controls src="assets/before-niki.mp3" class="spotify-audio">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+
+        <!-- Decorative icons -->
+        <div class="spotify-right">
+            <i class="fa-solid fa-microphone"></i>
+            <i class="fa-solid fa-list-ul"></i>
+            <i class="fa-solid fa-laptop"></i>
+            <i class="fa-solid fa-volume-high"></i>
+        </div>
+    </div>
+
     <footer>
         <p>™ Gawa ni cute</p>
     </footer>
-
-    <script>
-        function showSidePanel(topic) {
-            const panel = document.getElementById('sidePanel');
-            const title = document.getElementById('panelTitle');
-            const list = document.getElementById('panelList');
-
-            panel.style.display = 'block';
-
-            if (topic === 'favorites') {
-                title.innerText = 'My Favorite Things';
-                list.innerHTML = `
-                    <li>Pink</li>
-                    <li>Chuckie</li>
-                    <li>Dancing</li>
-                    <li>The song: "Before" by NIKI </li>
-                    <li>The aritists: NIKI, CLairo, The Weeknd, and PARTYNEXTDOOR</li>
-                `;
-            } else if (topic === 'skills') {
-                title.innerText = 'My Skills';
-                list.innerHTML = `
-                    <li>Taekwondo (Black Belt)</li>
-                    <li>Dancing</li>
-                    <li>Choir</li>
-                `;
-            }
-        }
-
-        function hideSidePanel() {
-            document.getElementById('sidePanel').style.display = 'none';
-        }
-    </script>
 </body>
 </html>

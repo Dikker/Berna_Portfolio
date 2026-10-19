@@ -1,5 +1,4 @@
 /* styles.css */
-
 * {
     margin: 0;
     padding: 0;
@@ -14,9 +13,16 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    padding-bottom: 75px;
 }
 
-/* HEADER */
+.panel-radio,
+.folder-state,
+.modal-state {
+    display: none;
+}
+
+/* Header */
 header {
     background-image: url("https://i.pinimg.com/736x/b3/35/e3/b335e3769ad3d1ccad39cd3fe3ee9a87.jpg");
     background-size: cover;
@@ -37,7 +43,7 @@ header p {
     font-weight: bold;
 }
 
-/* NAVIGATION */
+/* Navigation Bar */
 nav {
     background-color: #FFC0CB;
     text-align: center;
@@ -64,16 +70,16 @@ nav a.active {
     color: #d92296;
 }
 
-/* MAIN CONTENT */
+/* Main Content */
 main {
     flex: 1;
     padding: 40px 20px;
     display: flex;
     justify-content: center;
-    align-items: flex-start; 
+    align-items: flex-start;
 }
 
-/* HERO SECTION (Landing Page) */
+/* Landing Page */
 .hero {
     background-color: white;
     max-width: 900px;
@@ -128,7 +134,7 @@ main {
     background-color: #CDB891;
 }
 
-/* ABOUT ME SECTION WRAPPER */
+/* About Me Section */
 .about-wrapper {
     display: flex;
     gap: 20px;
@@ -138,7 +144,7 @@ main {
 
 .info-container {
     background-color: white;
-    flex: 2; 
+    flex: 2;
     padding: 30px;
     border-radius: 15px;
     border: 1px solid #e5e7eb;
@@ -154,12 +160,15 @@ main {
 }
 
 .card {
+    display: block;
+    width: 100%;
     background-color: #f3f4f6;
     padding: 15px;
     margin-bottom: 15px;
     border-radius: 10px;
     border: 1px solid #e5e7eb;
-    position: relative; 
+    position: relative;
+    text-align: left;
 }
 
 .card h3 {
@@ -173,27 +182,24 @@ main {
     color: #4b5563;
 }
 
-/* CLICKABLE CARDS */
 .click-card {
     cursor: pointer;
-    transition: background-color 0.2s;
 }
 
 .click-card:hover {
     background-color: #e5e7eb;
 }
 
-/* POLAROID HOVER EFFECT */
 .polaroid {
     position: absolute;
     top: -30px;
-    right: 20px; 
+    right: 20px;
     width: 120px;
     background-color: white;
-    padding: 10px 10px 30px 10px; 
+    padding: 10px 10px 30px 10px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
     border: 1px solid #ddd;
-    transform: rotate(5deg); 
+    transform: rotate(5deg);
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.4s ease, visibility 0.4s ease;
@@ -204,7 +210,7 @@ main {
     width: 100%;
     height: auto;
     display: block;
-    background-color: #ccc; 
+    background-color: #ccc;
     min-height: 100px;
 }
 
@@ -213,16 +219,15 @@ main {
     visibility: visible;
 }
 
-/* SIDE PANEL */
 .side-panel {
-    display: none; 
+    display: none;
     background-color: white;
-    flex: 1; 
+    flex: 1;
     padding: 30px;
     border-radius: 15px;
     border: 1px solid #e5e7eb;
     height: fit-content;
-    position: relative; 
+    position: relative;
 }
 
 .side-panel h2 {
@@ -230,7 +235,7 @@ main {
     font-size: 12px;
     margin-bottom: 15px;
     color: #f59e0b;
-    padding-right: 20px; 
+    padding-right: 20px;
 }
 
 .side-panel ul {
@@ -260,7 +265,15 @@ main {
     color: #b91c1c;
 }
 
-/* MY PASSION SECTION */
+#panel-favorites:checked ~ main .favorites-panel {
+    display: block;
+}
+
+#panel-skills:checked ~ main .skills-panel {
+    display: block;
+}
+
+/* My Passion Section */
 .passion-container {
     background-color: white;
     max-width: 900px;
@@ -323,7 +336,7 @@ main {
     color: #4b5563;
 }
 
-/* FAMILY AND CIRCLES - BULLETIN BOARD */
+/* Family and Circles */
 .bulletin-board {
     background-color: #fffbeb;
     background-image: radial-gradient(#d97706 0.75px, transparent 0.75px);
@@ -356,13 +369,13 @@ main {
 }
 
 .folder-card {
+    display: block;
     background-color: #fef3c7;
     border: 2px dashed #f59e0b;
     border-radius: 12px;
     padding: 25px 15px;
     text-align: center;
     cursor: pointer;
-    transition: transform 0.2s, background-color 0.2s;
 }
 
 .folder-card:hover {
@@ -381,8 +394,8 @@ main {
     color: #78350f;
 }
 
-/* GALLERY VIEW & HORIZONTAL POLAROIDS */
 .gallery-container {
+    display: none;
     background-color: white;
     max-width: 900px;
     width: 100%;
@@ -405,6 +418,7 @@ main {
 }
 
 .back-btn {
+    display: inline-block;
     background-color: #374151;
     color: white;
     border: none;
@@ -443,7 +457,6 @@ main {
     background-color: #e5e7eb;
     border-radius: 2px;
     cursor: pointer;
-    transition: transform 0.2s;
 }
 
 .polaroid-item img:hover {
@@ -463,6 +476,7 @@ main {
 }
 
 .desc-btn {
+    display: inline-block;
     background-color: #f59e0b;
     color: white;
     border: none;
@@ -477,7 +491,38 @@ main {
     background-color: #d97706;
 }
 
-/* IMAGE ZOOM LIGHTBOX (BLUR BACKGROUND) */
+#folder-none:checked ~ main .bulletin-board {
+    display: block;
+}
+
+#folder-family:checked ~ main .bulletin-board,
+#folder-scallywag:checked ~ main .bulletin-board,
+#folder-choir:checked ~ main .bulletin-board,
+#folder-friends:checked ~ main .bulletin-board,
+#folder-taekwondo:checked ~ main .bulletin-board {
+    display: none;
+}
+
+#folder-family:checked ~ main .gallery-family {
+    display: block;
+}
+
+#folder-scallywag:checked ~ main .gallery-scallywag {
+    display: block;
+}
+
+#folder-choir:checked ~ main .gallery-choir {
+    display: block;
+}
+
+#folder-friends:checked ~ main .gallery-friends {
+    display: block;
+}
+
+#folder-taekwondo:checked ~ main .gallery-taekwondo {
+    display: block;
+}
+
 .image-modal {
     position: fixed;
     top: 0;
@@ -495,11 +540,6 @@ main {
     z-index: 1000;
 }
 
-.image-modal.active {
-    opacity: 1;
-    visibility: visible;
-}
-
 .modal-content-img {
     transform: scale(0.7);
     transition: transform 0.3s ease;
@@ -507,7 +547,20 @@ main {
     max-height: 80%;
 }
 
-.image-modal.active .modal-content-img {
+.image-modal-backdrop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+#zoom-img:checked ~ .image-modal {
+    opacity: 1;
+    visibility: visible;
+}
+
+#zoom-img:checked ~ .image-modal .modal-content-img {
     transform: scale(1);
 }
 
@@ -520,7 +573,6 @@ main {
     box-shadow: 0 10px 25px rgba(0,0,0,0.3);
 }
 
-/* DESCRIPTION MESSAGE BOX MODAL */
 .desc-modal {
     position: fixed;
     top: 0;
@@ -538,16 +590,11 @@ main {
     z-index: 1000;
 }
 
-.desc-modal.active {
-    opacity: 1;
-    visibility: visible;
-}
-
 .desc-modal-content {
     background-color: white;
-    padding: 30px;
-    border-radius: 15px;
-    max-width: 500px;
+    padding: 40px;
+    border-radius: 18px;
+    max-width: 650px;
     width: 90%;
     position: relative;
     box-shadow: 0 10px 25px rgba(0,0,0,0.2);
@@ -555,31 +602,45 @@ main {
     transition: transform 0.3s ease;
 }
 
-.desc-modal.active .desc-modal-content {
+#desc-family:checked ~ .desc-modal-family,
+#desc-scallywag:checked ~ .desc-modal-scallywag,
+#desc-choir:checked ~ .desc-modal-choir,
+#desc-friends:checked ~ .desc-modal-friends,
+#desc-taekwondo:checked ~ .desc-modal-taekwondo {
+    opacity: 1;
+    visibility: visible;
+}
+
+#desc-family:checked ~ .desc-modal-family .desc-modal-content,
+#desc-scallywag:checked ~ .desc-modal-scallywag .desc-modal-content,
+#desc-choir:checked ~ .desc-modal-choir .desc-modal-content,
+#desc-friends:checked ~ .desc-modal-friends .desc-modal-content,
+#desc-taekwondo:checked ~ .desc-modal-taekwondo .desc-modal-content {
     transform: scale(1);
 }
 
 .desc-modal-content h2 {
     font-family: 'Press Start 2P', cursive, sans-serif;
-    font-size: 14px;
+    font-size: 16px;
     color: #f59e0b;
-    margin-bottom: 15px;
-    padding-right: 25px;
+    margin-bottom: 20px;
+    padding-right: 30px;
+    line-height: 1.5;
 }
 
 .desc-modal-content p {
-    font-size: 14px;
-    color: #4b5563;
-    line-height: 1.7;
+    font-size: 16px;
+    color: #374151;
+    line-height: 1.8;
 }
 
 .modal-close-btn {
     position: absolute;
-    top: 15px;
-    right: 15px;
+    top: 20px;
+    right: 20px;
     background: none;
     border: none;
-    font-size: 18px;
+    font-size: 22px;
     color: #ef4444;
     cursor: pointer;
     font-weight: bold;
@@ -589,7 +650,7 @@ main {
     color: #b91c1c;
 }
 
-/* FOOTER */
+/* Footer */
 footer {
     background-color: #E89EB8;
     color: #FD3DB5;
@@ -599,34 +660,93 @@ footer {
     font-weight: bold;
 }
 
-/* MOBILE DESIGN */
-@media (max-width: 768px) {
-    .hero, .about-wrapper {
-        flex-direction: column;
-        text-align: center;
-    }
+/* Music Player */
+.spotify-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #000000;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 24px;
+    box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+    height: 75px;
+    border-top: 1px solid #282828;
+}
 
-    nav a {
-        display: block;
-        margin: 5px 0;
-    }
+.spotify-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 200px;
+}
 
-    .polaroid {
-        right: 10px;
-        top: -100px;
-    }
+.spotify-cover {
+    width: 52px;
+    height: 52px;
+    border-radius: 4px;
+    object-fit: cover;
+    background-color: #282828;
+}
 
-    .passion-item, .passion-item.reverse {
-        flex-direction: column;
-        text-align: center;
-    }
+.spotify-track {
+    display: flex;
+    flex-direction: column;
+}
 
-    .passion-image img {
-        margin-bottom: 15px;
-    }
+.spotify-track .track-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
 
-    .gallery-header {
-        flex-direction: column;
-        align-items: flex-start;
-    }
+.verified-icon {
+    color: #1ed760;
+    font-size: 13px;
+}
+
+.spotify-track .track-artist {
+    font-size: 12px;
+    color: #b3b3b3;
+    margin: 2px 0 0 0;
+}
+
+.spotify-center {
+    flex: 1;
+    max-width: 500px;
+    display: flex;
+    justify-content: center;
+}
+
+.spotify-audio {
+    width: 100%;
+    height: 40px;
+    filter: invert(100%) hue-rotate(180deg);
+    border-radius: 20px;
+}
+
+.spotify-right {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    color: #b3b3b3;
+    font-size: 15px;
+    min-width: 180px;
+    justify-content: flex-end;
+}
+
+.spotify-right i {
+    cursor: pointer;
+}
+
+.spotify-right i:hover {
+    color: #ffffff;
 }
