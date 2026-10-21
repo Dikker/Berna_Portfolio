@@ -71,22 +71,23 @@
                 <button class="desc-btn" id="openDescBtn">Read Description</button>
             </div>
         </section>
+
+        <!-- Modals moved inside <main> so SPA router swaps them -->
+        <div class="desc-modal" id="descModal">
+            <div class="desc-modal-content">
+                <button class="modal-close-btn" id="closeDescBtn">✖</button>
+                <h2 id="descTitle">Title</h2>
+                <p id="descText">Description text goes here.</p>
+            </div>
+        </div>
+
+        <div class="image-modal" id="imageModal">
+            <div class="image-modal-backdrop" id="imageModalBackdrop"></div>
+            <div class="modal-content-img">
+                <img id="zoomedImage" src="" alt="Zoomed Photo">
+            </div>
+        </div>
     </main>
-
-    <div class="desc-modal" id="descModal">
-        <div class="desc-modal-content">
-            <button class="modal-close-btn" id="closeDescBtn">✖</button>
-            <h2 id="descTitle">Title</h2>
-            <p id="descText">Description text goes here.</p>
-        </div>
-    </div>
-
-    <div class="image-modal" id="imageModal">
-        <div class="image-modal-backdrop" id="imageModalBackdrop"></div>
-        <div class="modal-content-img">
-            <img id="zoomedImage" src="" alt="Zoomed Photo">
-        </div>
-    </div>
 
     <div class="spotify-bar">
         <div class="spotify-left">

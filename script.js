@@ -105,14 +105,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const polaroidList = document.getElementById('polaroidList');
         const openDescBtn = document.getElementById('openDescBtn');
         
-        const descModal = document.getElementById('descModal');
         const closeDescBtn = document.getElementById('closeDescBtn');
-        const descTitle = document.getElementById('descTitle');
-        const descText = document.getElementById('descText');
-
-        const imageModal = document.getElementById('imageModal');
         const imageModalBackdrop = document.getElementById('imageModalBackdrop');
-        const zoomedImage = document.getElementById('zoomedImage');
 
         const folderData = {
             family: {
@@ -186,8 +180,12 @@ document.addEventListener('DOMContentLoaded', () => {
                         `;
                         
                         item.querySelector('img').addEventListener('click', () => {
-                            zoomedImage.src = photo.src;
-                            imageModal.classList.add('active');
+                            const currentZoomedImg = document.getElementById('zoomedImage');
+                            const currentImgModal = document.getElementById('imageModal');
+                            if (currentZoomedImg && currentImgModal) {
+                                currentZoomedImg.src = photo.src;
+                                currentImgModal.classList.add('active');
+                            }
                         });
 
                         polaroidList.appendChild(item);
@@ -210,28 +208,38 @@ document.addEventListener('DOMContentLoaded', () => {
                 openDescBtn.addEventListener('click', () => {
                     if (!activeFolderKey || !folderData[activeFolderKey]) return;
                     const data = folderData[activeFolderKey];
-                    descTitle.innerText = data.title;
-                    descText.innerText = data.description;
-                    descModal.classList.add('active');
+                    const currentDescModal = document.getElementById('descModal');
+                    const currentDescTitle = document.getElementById('descTitle');
+                    const currentDescText = document.getElementById('descText');
+                    
+                    if (currentDescTitle && currentDescText && currentDescModal) {
+                        currentDescTitle.innerText = data.title;
+                        currentDescText.innerText = data.description;
+                        currentDescModal.classList.add('active');
+                    }
                 });
             }
 
             if (closeDescBtn) {
                 closeDescBtn.addEventListener('click', () => {
-                    descModal.classList.remove('active');
+                    const currentDescModal = document.getElementById('descModal');
+                    if (currentDescModal) currentDescModal.classList.remove('active');
                 });
             }
 
             if (imageModalBackdrop) {
                 imageModalBackdrop.addEventListener('click', () => {
-                    imageModal.classList.remove('active');
+                    const currentImgModal = document.getElementById('imageModal');
+                    if (currentImgModal) currentImgModal.classList.remove('active');
                 });
             }
 
             document.addEventListener('keydown', (e) => {
                 if (e.key === 'Escape') {
-                    if (descModal) descModal.classList.remove('active');
-                    if (imageModal) imageModal.classList.remove('active');
+                    const currentDescModal = document.getElementById('descModal');
+                    const currentImgModal = document.getElementById('imageModal');
+                    if (currentDescModal) currentDescModal.classList.remove('active');
+                    if (currentImgModal) currentImgModal.classList.remove('active');
                 }
             });
         }
