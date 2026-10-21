@@ -1,3 +1,4 @@
+<!-- FamilyandCircles.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,284 +7,87 @@
     <title>Family & Circles - Ma. Bernadette Pascua</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
-        <h1>Ma. Bernadette Pascua</h1>
-        <p>9 - St. Padre Pio</p>
+        <div class="header-overlay">
+            <h1>Ma. Bernadette Pascua</h1>
+            <p>9 - St. Padre Pio</p>
+        </div>
     </header>
 
     <nav>
-        <a href="LandingPage.html">Home</a>
-        <a href="AboutMe.html">About Me</a>
-        <a href="MyPassion.html">My Passion</a>
-        <a href="FamilyAndCircles.html" class="active">Family & Circles</a>
+        <a href="LandingPage.html"><i class="fa-solid fa-house"></i> Home</a>
+        <a href="AboutMe.html"><i class="fa-solid fa-user"></i> About Me</a>
+        <a href="MyPassion.html"><i class="fa-solid fa-heart"></i> My Passion</a>
+        <a href="FamilyandCircles.html" class="active"><i class="fa-solid fa-users"></i> Family & Circles</a>
     </nav>
 
-    <input type="radio" name="folder-select" id="folder-none" class="folder-state" checked>
-    <input type="radio" name="folder-select" id="folder-family" class="folder-state">
-    <input type="radio" name="folder-select" id="folder-scallywag" class="folder-state">
-    <input type="radio" name="folder-select" id="folder-choir" class="folder-state">
-    <input type="radio" name="folder-select" id="folder-friends" class="folder-state">
-    <input type="radio" name="folder-select" id="folder-taekwondo" class="folder-state">
-
-    <input type="checkbox" id="desc-family" class="modal-state">
-    <input type="checkbox" id="desc-scallywag" class="modal-state">
-    <input type="checkbox" id="desc-choir" class="modal-state">
-    <input type="checkbox" id="desc-friends" class="modal-state">
-    <input type="checkbox" id="desc-taekwondo" class="modal-state">
-
-    <input type="checkbox" id="zoom-img" class="modal-state">
-
     <main>
-        <section class="bulletin-board">
+        <section class="bulletin-board" id="bulletinBoard">
             <h2>Family & Circles Bulletin</h2>
             <p class="bulletin-sub">Click a folder to view photos and memories!</p>
 
             <div class="folder-grid">
-                <label for="folder-family" class="folder-card">
+                <div class="folder-card" data-folder="family">
                     <i class="fa-solid fa-folder-open folder-icon"></i>
                     <h3>Family</h3>
-                </label>
+                </div>
 
-                <label for="folder-scallywag" class="folder-card">
+                <div class="folder-card" data-folder="scallywag">
                     <i class="fa-solid fa-folder-open folder-icon"></i>
                     <h3>Scallywag</h3>
-                </label>
+                </div>
 
-                <label for="folder-choir" class="folder-card">
+                <div class="folder-card" data-folder="choir">
                     <i class="fa-solid fa-folder-open folder-icon"></i>
                     <h3>Choir</h3>
-                </label>
+                </div>
 
-                <label for="folder-friends" class="folder-card">
+                <div class="folder-card" data-folder="friends">
                     <i class="fa-solid fa-folder-open folder-icon"></i>
                     <h3>Friends</h3>
-                </label>
+                </div>
 
-                <label for="folder-taekwondo" class="folder-card">
+                <div class="folder-card" data-folder="taekwondo">
                     <i class="fa-solid fa-folder-open folder-icon"></i>
                     <h3>Taekwondo</h3>
-                </label>
+                </div>
             </div>
         </section>
 
-        <section class="gallery-container gallery-family">
+        <section class="gallery-container" id="galleryContainer" style="display: none;">
             <div class="gallery-header">
-                <label for="folder-none" class="back-btn">⬅ Back to Folders</label>
-                <h2>My Family</h2>
+                <button class="back-btn" id="backToFoldersBtn">⬅ Back to Folders</button>
+                <h2 id="galleryTitle">Group Title</h2>
             </div>
 
-            <div class="polaroid-horizontal">
-                <div class="polaroid-item">
-                    <label for="zoom-img" onclick="document.getElementById('zoomedImage').src='assets/family1.png'">
-                        <img src="assets/family1.png" alt="Family Outing">
-                    </label>
-                    <p>Family Outing</p>
-                </div>
-                <div class="polaroid-item">
-                    <label for="zoom-img" onclick="document.getElementById('zoomedImage').src='assets/family2.png'">
-                        <img src="assets/family2.png" alt="Family Picture">
-                    </label>
-                    <p>Family Picture</p>
-                </div>
-                <div class="polaroid-item">
-                    <label for="zoom-img" onclick="document.getElementById('zoomedImage').src='assets/family3.png'">
-                        <img src="assets/family3.png" alt="Family Occasion">
-                    </label>
-                    <p>Family Occasion</p>
-                </div>
+            <div class="polaroid-horizontal" id="polaroidList">
+                <!-- Dynamically populated via script.js -->
             </div>
 
             <div class="gallery-footer">
-                <label for="desc-family" class="desc-btn">Read Description</label>
-            </div>
-        </section>
-
-        <section class="gallery-container gallery-scallywag">
-            <div class="gallery-header">
-                <label for="folder-none" class="back-btn">⬅ Back to Folders</label>
-                <h2>Scallywag (SLCV Dance Company)</h2>
-            </div>
-
-            <div class="polaroid-horizontal">
-                <div class="polaroid-item">
-                    <label for="zoom-img" onclick="document.getElementById('zoomedImage').src='assets/scallywag1.png'">
-                        <img src="assets/scallywag1.png" alt="Dance Practice">
-                    </label>
-                    <p>Dance Practice</p>
-                </div>
-                <div class="polaroid-item">
-                    <label for="zoom-img" onclick="document.getElementById('zoomedImage').src='assets/scallywag2.png'">
-                        <img src="assets/scallywag2.png" alt="Team Bonding">
-                    </label>
-                    <p>Team Bonding</p>
-                </div>
-                <div class="polaroid-item">
-                    <label for="zoom-img" onclick="document.getElementById('zoomedImage').src='assets/scallywag3.png'">
-                        <img src="assets/scallywag3.png" alt="Stage Performance">
-                    </label>
-                    <p>Stage Performance</p>
-                </div>
-            </div>
-
-            <div class="gallery-footer">
-                <label for="desc-scallywag" class="desc-btn">Read Description</label>
-            </div>
-        </section>
-
-        <section class="gallery-container gallery-choir">
-            <div class="gallery-header">
-                <label for="folder-none" class="back-btn">⬅ Back to Folders</label>
-                <h2>Church Choir</h2>
-            </div>
-
-            <div class="polaroid-horizontal">
-                <div class="polaroid-item">
-                    <label for="zoom-img" onclick="document.getElementById('zoomedImage').src='assets/choir1.png'">
-                        <img src="assets/choir1.png" alt="Sunday Choir">
-                    </label>
-                    <p>Sunday Choir</p>
-                </div>
-                <div class="polaroid-item">
-                    <label for="zoom-img" onclick="document.getElementById('zoomedImage').src='assets/choir2.png'">
-                        <img src="assets/choir2.png" alt="Rehearsal">
-                    </label>
-                    <p>Rehearsal</p>
-                </div>
-                <div class="polaroid-item">
-                    <label for="zoom-img" onclick="document.getElementById('zoomedImage').src='assets/choir3.png'">
-                        <img src="assets/choir3.png" alt="Christmas Service">
-                    </label>
-                    <p>Christmas Service</p>
-                </div>
-            </div>
-
-            <div class="gallery-footer">
-                <label for="desc-choir" class="desc-btn">Read Description</label>
-            </div>
-        </section>
-
-        <section class="gallery-container gallery-friends">
-            <div class="gallery-header">
-                <label for="folder-none" class="back-btn">⬅ Back to Folders</label>
-                <h2>My Friends & Classmates</h2>
-            </div>
-
-            <div class="polaroid-horizontal">
-                <div class="polaroid-item">
-                    <label for="zoom-img" onclick="document.getElementById('zoomedImage').src='assets/friends1.png'">
-                        <img src="assets/friends1.png" alt="Classroom Fun">
-                    </label>
-                    <p>Classroom Fun</p>
-                </div>
-                <div class="polaroid-item">
-                    <label for="zoom-img" onclick="document.getElementById('zoomedImage').src='assets/friends2.png'">
-                        <img src="assets/friends2.png" alt="Friends Outing">
-                    </label>
-                    <p>Friends Outing</p>
-                </div>
-                <div class="polaroid-item">
-                    <label for="zoom-img" onclick="document.getElementById('zoomedImage').src='assets/friends3.png'">
-                        <img src="assets/friends3.png" alt="House Hangout">
-                    </label>
-                    <p>House Hangout</p>
-                </div>
-                <div class="polaroid-item">
-                    <label for="zoom-img" onclick="document.getElementById('zoomedImage').src='assets/friends4.png'">
-                        <img src="assets/friends4.png" alt="School Event">
-                    </label>
-                    <p>School Event</p>
-                </div>
-            </div>
-
-            <div class="gallery-footer">
-                <label for="desc-friends" class="desc-btn">Read Description</label>
-            </div>
-        </section>
-
-        <section class="gallery-container gallery-taekwondo">
-            <div class="gallery-header">
-                <label for="folder-none" class="back-btn">⬅ Back to Folders</label>
-                <h2>Taekwondo Team</h2>
-            </div>
-
-            <div class="polaroid-horizontal">
-                <div class="polaroid-item">
-                    <label for="zoom-img" onclick="document.getElementById('zoomedImage').src='assets/tkd1.png'">
-                        <img src="assets/tkd1.png" alt="Training Day">
-                    </label>
-                    <p>Training Day</p>
-                </div>
-                <div class="polaroid-item">
-                    <label for="zoom-img" onclick="document.getElementById('zoomedImage').src='assets/tkd2.png'">
-                        <img src="assets/tkd2.png" alt="Competition Day">
-                    </label>
-                    <p>Competition Day</p>
-                </div>
-                <div class="polaroid-item">
-                    <label for="zoom-img" onclick="document.getElementById('zoomedImage').src='assets/tkd3.png'">
-                        <img src="assets/tkd3.png" alt="Post-Training Bonding">
-                    </label>
-                    <p>Post-Training Bonding</p>
-                </div>
-            </div>
-
-            <div class="gallery-footer">
-                <label for="desc-taekwondo" class="desc-btn">Read Description</label>
+                <button class="desc-btn" id="openDescBtn">Read Description</button>
             </div>
         </section>
     </main>
 
-    <div class="desc-modal desc-modal-family">
+    <div class="desc-modal" id="descModal">
         <div class="desc-modal-content">
-            <label for="desc-family" class="modal-close-btn">✖</label>
-            <h2>My Family</h2>
-            <p>This is my mom, and my brother. The people who watched me grow up, taught me discipline, whom the people I love so much, and the people who will always be there for me no matter what.</p>
+            <button class="modal-close-btn" id="closeDescBtn">✖</button>
+            <h2 id="descTitle">Title</h2>
+            <p id="descText">Description text goes here.</p>
         </div>
     </div>
 
-    <div class="desc-modal desc-modal-scallywag">
-        <div class="desc-modal-content">
-            <label for="desc-scallywag" class="modal-close-btn">✖</label>
-            <h2>Scallywag (SLCV Dance Company)</h2>
-            <p>I'm so glad that I met these peeps, especially my ate's and kuya's, but we all had to walk on our own paths. However, we were still able to cross our paths and hangout again whenever we had time. I love these people so much, I love performing and practicing with them, and I will forever cherish our memories together.</p>
-        </div>
-    </div>
-
-    <div class="desc-modal desc-modal-choir">
-        <div class="desc-modal-content">
-            <label for="desc-choir" class="modal-close-btn">✖</label>
-            <h2>Church Choir</h2>
-            <p>Serving the Lord through music and singing in our church choir brings so much peace and joy to my heart. I am glad that I met these people and I always enjoy singing in church with them, having breakfast together every after mass.</p>
-        </div>
-    </div>
-
-    <div class="desc-modal desc-modal-friends">
-        <div class="desc-modal-content">
-            <label for="desc-friends" class="modal-close-btn">✖</label>
-            <h2>My Friends & Classmates</h2>
-            <p>I am also grateful that I met Shamila, the girl I met in 7th grade and became closed with in 2 years, I'm very lucky to have her by my side, and my ride or die. I'm also grateful that I met my friends as well, who never fail to support me, who never bring me down, and never fail to make me laugh and brighten my day.</p>
-        </div>
-    </div>
-
-    <div class="desc-modal desc-modal-taekwondo">
-        <div class="desc-modal-content">
-            <label for="desc-taekwondo" class="modal-close-btn">✖</label>
-            <h2>Taekwondo Team</h2>
-            <p>I'm so glad to have the same sports with these peeps, I enjoy training with them, having a competition with them, and the peeps who always support me everytime I compete and step on the mats.</p>
-        </div>
-    </div>
-
-    <div class="image-modal">
-        <label for="zoom-img" class="image-modal-backdrop"></label>
+    <div class="image-modal" id="imageModal">
+        <div class="image-modal-backdrop" id="imageModalBackdrop"></div>
         <div class="modal-content-img">
             <img id="zoomedImage" src="" alt="Zoomed Photo">
         </div>
     </div>
 
-    <!-- Music Player -->
     <div class="spotify-bar">
         <div class="spotify-left">
             <img src="assets/niki.png" alt="Album Cover" class="spotify-cover">
@@ -299,7 +103,6 @@
             </audio>
         </div>
 
-        <!-- Decorative icons -->
         <div class="spotify-right">
             <i class="fa-solid fa-microphone"></i>
             <i class="fa-solid fa-list-ul"></i>
@@ -311,5 +114,7 @@
     <footer>
         <p>™ Gawa ni cute</p>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>

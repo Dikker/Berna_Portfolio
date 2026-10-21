@@ -1,3 +1,4 @@
+<!-- AboutMe.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,24 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Me - Ma. Bernadette Pascua</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
-        <h1>Ma. Bernadette Pascua</h1>
-        <p>9 - St. Padre Pio</p>
+        <div class="header-overlay">
+            <h1>Ma. Bernadette Pascua</h1>
+            <p>9 - St. Padre Pio</p>
+        </div>
     </header>
 
     <nav>
-        <a href="LandingPage.html">Home</a>
-        <a href="AboutMe.html" class="active">About Me</a>
-        <a href="MyPassion.html">My Passion</a>
-        <a href="FamilyAndCircles.html">Family & Circles</a>
+        <a href="LandingPage.html"><i class="fa-solid fa-house"></i> Home</a>
+        <a href="AboutMe.html" class="active"><i class="fa-solid fa-user"></i> About Me</a>
+        <a href="MyPassion.html"><i class="fa-solid fa-heart"></i> My Passion</a>
+        <a href="FamilyandCircles.html"><i class="fa-solid fa-users"></i> Family & Circles</a>
     </nav>
-
-    <input type="radio" name="about-panel" id="panel-none" class="panel-radio" checked>
-    <input type="radio" name="about-panel" id="panel-favorites" class="panel-radio">
-    <input type="radio" name="about-panel" id="panel-skills" class="panel-radio">
 
     <main>
         <div class="about-wrapper">
@@ -31,7 +31,7 @@
 
                 <div class="card hover-card">
                     <h3>Birthday</h3>
-                    <p>September 6, 2011</p>
+                    <p>March 12, 2012</p>
                     <div class="polaroid">
                         <img src="assets/bday.png" alt="Birthday">
                     </div>
@@ -50,19 +50,19 @@
                     </div>
                 </div>
 
-                <label for="panel-favorites" class="card click-card">
+                <div class="card click-card" data-panel="favorites">
                     <h3>Favorite Things</h3>
                     <p>Click to see what I love! ➔</p>
-                </label>
+                </div>
 
-                <label for="panel-skills" class="card click-card">
+                <div class="card click-card" data-panel="skills">
                     <h3>Skills</h3>
                     <p>Click to see what I can do! ➔</p>
-                </label>
+                </div>
             </section>
 
-            <aside class="side-panel favorites-panel">
-                <label for="panel-none" class="close-btn">✖</label>
+            <aside class="side-panel" id="favoritesPanel">
+                <button class="close-btn" aria-label="Close panel">✖</button>
                 <h2>My Favorite Things</h2>
                 <ul>
                     <li>Pink</li>
@@ -73,8 +73,8 @@
                 </ul>
             </aside>
 
-            <aside class="side-panel skills-panel">
-                <label for="panel-none" class="close-btn">✖</label>
+            <aside class="side-panel" id="skillsPanel">
+                <button class="close-btn" aria-label="Close panel">✖</button>
                 <h2>My Skills</h2>
                 <ul>
                     <li>Taekwondo (Black Belt)</li>
@@ -85,7 +85,6 @@
         </div>
     </main>
 
-    <!-- Music Player -->
     <div class="spotify-bar">
         <div class="spotify-left">
             <img src="assets/niki.png" alt="Album Cover" class="spotify-cover">
@@ -101,7 +100,6 @@
             </audio>
         </div>
 
-        <!-- Decorative icons -->
         <div class="spotify-right">
             <i class="fa-solid fa-microphone"></i>
             <i class="fa-solid fa-list-ul"></i>
@@ -113,5 +111,7 @@
     <footer>
         <p>™ Gawa ni cute</p>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>

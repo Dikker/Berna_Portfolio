@@ -1,3 +1,4 @@
+<!-- MyPassion.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,19 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Passion - Ma. Bernadette Pascua</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
-        <h1>Ma. Bernadette Pascua</h1>
-        <p>9 - St. Padre Pio</p>
+        <div class="header-overlay">
+            <h1>Ma. Bernadette Pascua</h1>
+            <p>9 - St. Padre Pio</p>
+        </div>
     </header>
 
     <nav>
-        <a href="LandingPage.html">Home</a>
-        <a href="AboutMe.html">About Me</a>
-        <a href="MyPassion.html" class="active">My Passion</a>
-        <a href="FamilyAndCircles.html">Family & Circles</a>
+        <a href="LandingPage.html"><i class="fa-solid fa-house"></i> Home</a>
+        <a href="AboutMe.html"><i class="fa-solid fa-user"></i> About Me</a>
+        <a href="MyPassion.html" class="active"><i class="fa-solid fa-heart"></i> My Passion</a>
+        <a href="FamilyandCircles.html"><i class="fa-solid fa-users"></i> Family & Circles</a>
     </nav>
 
     <main>
@@ -56,7 +60,6 @@
         </section>
     </main>
 
-    <!-- Music Player -->
     <div class="spotify-bar">
         <div class="spotify-left">
             <img src="assets/niki.png" alt="Album Cover" class="spotify-cover">
@@ -72,7 +75,6 @@
             </audio>
         </div>
 
-        <!-- Decorative icons -->
         <div class="spotify-right">
             <i class="fa-solid fa-microphone"></i>
             <i class="fa-solid fa-list-ul"></i>
@@ -84,5 +86,7 @@
     <footer>
         <p>™ Gawa ni cute</p>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
