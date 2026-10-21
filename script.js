@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 document.title = doc.title;
 
                 // Update Active Navigation Highlight
-                const currentPath = url.split('/').pop() || 'LandingPage.html';
+                const currentPath = url.split('/').pop() || 'index.html';
                 document.querySelectorAll('nav a').forEach(link => {
                     const hrefPath = link.getAttribute('href').split('/').pop();
                     if (hrefPath === currentPath) {
