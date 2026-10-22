@@ -113,8 +113,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 title: "My Family",
                 description: "This is my mom, and my brother. The people who watched me grow up, taught me discipline, whom the people I love so much, and the people who will always be there for me no matter what.",
                 photos: [
-                    { src: "assets/family1.png", caption: "Our Visita Iglesia" },
-                    { src: "assets/family2.png", caption: "Our Christmas 2024" },
                     { src: "assets/family3.png", caption: "My Recognition as Deportment" }
                 ]
             },
